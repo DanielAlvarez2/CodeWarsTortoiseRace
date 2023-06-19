@@ -1,0 +1,34 @@
+<script>
+    function race(v1, v2, g) {
+        let A=g;
+        let B=0;
+        let seconds=0;
+        while(A>B){
+          console.log(A,B);
+          A=A+v1/3600;
+          B=B+v2/3600;
+          seconds++;  
+        }
+        seconds--;
+        console.log(seconds);
+        let H;
+        let M;
+        let S;
+        if (seconds<3600){
+            H=0;
+        }else{
+            H=Math.floor(seconds/3600);
+            seconds=seconds-(H*3600);
+        }
+        if(seconds<60){
+            M=0;
+        }else{
+            M=Math.floor(seconds/60);
+            seconds=seconds-(M*60);
+        }
+        S=seconds;
+        console.log(H,M,S);
+        return([H,M,S]);
+    }
+    race(720,850,70)
+</script>
